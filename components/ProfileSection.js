@@ -9,7 +9,7 @@ const ProfileSection = () => {
         source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwyXeKDN29AmZgZPLS7n0Bepe8QmVappBwZCeA3XWEbWNdiDFB' }} // Replace with your avatar URL
         style={styles.avatar}
       />
-      <Text style={styles.profileName}>David Robinson</Text>
+      <Text style={styles.profileName}>Kristiane Gwyn Elan</Text>
       <Text style={styles.joinedText}>Joined 1 year ago</Text>
     
     </View>

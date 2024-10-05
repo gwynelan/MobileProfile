@@ -1,38 +1,36 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Importing the icon library
 
 const UserSection = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Manage User</Text>
-      <TouchableOpacity style={styles.arrowContainer}>
-        <Text style={styles.arrow}>></Text>
+    <View style={{ 
+      padding: 20, 
+      borderBottomWidth: 1, 
+      borderBottomColor: '#ccc', 
+      backgroundColor: '#fff', 
+      shadowColor: '#000', 
+      shadowOpacity: 0.3, 
+      elevation: 5 
+    }}>
+      <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Profile</Text>
+      <TouchableOpacity style={{ 
+          flexDirection: 'row', 
+          alignItems: 'center', 
+          paddingHorizontal: 10, 
+          paddingVertical: 10, // Added padding for a button-like appearance
+          borderRadius: 5, // Rounded corners for button
+          backgroundColor: '#e6f7ff' // Light background for visibility
+        }}
+        onPress={() => { /* Handle Manage Profile Action */ }} // Add your action here
+      >
+        <Text style={{ fontSize: 14, color: '#007AFF', marginRight: 5 }}>
+          Manage Profile
+        </Text>
+        <Icon name="chevron-right" size={20} color="#007AFF" /> {/* Right arrow icon */}
       </TouchableOpacity>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
-    width: '100%',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  arrowContainer: {
-    paddingHorizontal: 10,
-  },
-  arrow: {
-    fontSize: 20,
-    color: '#007AFF', // Change color as per your design
-  },
-});
 
 export default UserSection;

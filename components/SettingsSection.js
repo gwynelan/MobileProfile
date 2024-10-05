@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'; // Add TouchableOpacity here
 
 const SettingsSection = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.sectionTitle}>Settings</Text>
-      <Text style={styles.setting}>Notifications</Text>
-      <Text style={styles.setting}>Dark Mode</Text>
+      <TouchableOpacity onPress={() => { /* Handle notifications */ }}>
+        <Text style={styles.setting}>Notifications</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => { /* Handle dark mode */ }}>
+        <Text style={styles.setting}>Dark Mode</Text>
+      </TouchableOpacity>
     </View>
   );
 };
