@@ -1,17 +1,16 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+// ProfileSection.js
+import React, { useContext } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { ThemeContext } from './ThemeContext'; // Adjust path as necessary
 
 const ProfileSection = () => {
+  const { isDarkMode } = useContext(ThemeContext); // Consume context
+
   return (
-    <View style={styles.container}>
-      {/* Avatar Image */}
-      <Image 
-        source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwyXeKDN29AmZgZPLS7n0Bepe8QmVappBwZCeA3XWEbWNdiDFB' }} // Replace with your avatar URL
-        style={styles.avatar}
-      />
-      <Text style={styles.profileName}>Kristiane Gwyn Elan</Text>
-      <Text style={styles.joinedText}>Joined 1 year ago</Text>
-    
+    <View style={[styles.container, { backgroundColor: isDarkMode ? '#333' : '#fff' }]}>
+      <Text style={[styles.title, { color: isDarkMode ? '#fff' : '#000' }]}>User Name</Text>
+      <Text style={[styles.info, { color: isDarkMode ? '#ccc' : '#555' }]}>Email: user@example.com</Text>
+      <Text style={[styles.info, { color: isDarkMode ? '#ccc' : '#555' }]}>Phone: 123-456-7890</Text>
     </View>
   );
 };
@@ -19,26 +18,16 @@ const ProfileSection = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    alignItems: 'center', // Center the content
-    width: '100%',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
-  avatar: {
-    width: 100,   // Adjust the width as needed
-    height: 100,  // Adjust the height as needed
-    borderRadius: 50, // Makes the image circular
-    marginBottom: 10, // Space between avatar and text
-  },
-  profileName: {
-    fontSize: 20,
+  title: {
+    fontSize: 22,
     fontWeight: 'bold',
   },
-  joinedText: {
-    fontSize: 14,
-    color: '#666',
-  },
-  profileDetail: {
+  info: {
     fontSize: 16,
-    marginTop: 10,
+    marginTop: 5,
   },
 });
 

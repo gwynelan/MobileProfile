@@ -1,40 +1,31 @@
-import React, { useState } from 'react';
-import { View } from 'react-native';
-import Header from './components/header';
-import ProfileSection from './components/ProfileSection';
-import SettingsSection from './components/SettingsSection';
-import SignOutButton from './components/SignOutButton';
-import UserSection from './components/UserSection';
+// App.js
+import React from 'react';
+import { SafeAreaView, ScrollView } from 'react-native';
+import ThemeProvider from './components/ThemeContext'; // Adjust path as necessary
+import Header from './components/header'; // Adjust path as necessary
+import UserSection from './components/UserSection'; // Adjust path as necessary
+import ProfileSection from './components/ProfileSection'; // Adjust path as necessary
+import SettingsSection from './components/SettingsSection'; // Adjust path as necessary
+import SignOutButton from './components/SignOutButton'; // Adjust path as necessary
 
 const App = () => {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
-
-  // Function to toggle Dark Mode
-  const toggleDarkMode = () => {
-    setIsDarkModeEnabled((previousState) => !previousState);
+  const handleSignOut = () => {
+    // Handle user sign out
+    console.log('User signed out');
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: isDarkModeEnabled ? '#333' : '#fff',
-      }}
-    >
-      <Header isDarkModeEnabled={isDarkModeEnabled} />
-      <ProfileSection isDarkModeEnabled={isDarkModeEnabled} />
-      <UserSection isDarkModeEnabled={isDarkModeEnabled} />
-      <SettingsSection toggleDarkMode={toggleDarkMode} isDarkModeEnabled={isDarkModeEnabled} />
-      <View
-        style={{
-          flex: 1, // Make the sign out container take remaining space
-          justifyContent: 'flex-end', // Align the button to the bottom
-          padding: 20, // Add padding to the bottom
-        }}
-      >
-        <SignOutButton />
-      </View>
-    </View>
+    <ThemeProvider>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Header />
+        <ScrollView>
+          <UserSection />
+          <ProfileSection />
+          <SettingsSection />
+          <SignOutButton onSignOut={handleSignOut} />
+        </ScrollView>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 };
 

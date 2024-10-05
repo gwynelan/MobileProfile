@@ -1,24 +1,26 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+// Header.js
+import React, { useContext } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { ThemeContext } from './components/ThemeContext'; // Adjust path as necessary
 
 const Header = () => {
+  const { isDarkMode } = useContext(ThemeContext); // Consume context
+
   return (
-    <View style={styles.header}>
-      <Text style={styles.title}>Profile</Text>
+    <View style={[styles.header, { backgroundColor: isDarkMode ? '#444' : '#007AFF' }]}>
+      <Text style={[styles.title, { color: isDarkMode ? '#fff' : '#fff' }]}>My App</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#6200EE',
-    width: '100%',
     padding: 20,
     alignItems: 'center',
   },
   title: {
-    color: '#ffffff',
     fontSize: 24,
+    fontWeight: 'bold',
   },
 });
 
