@@ -11,11 +11,11 @@ const SettingsSection = ({ toggleDarkMode, isDarkModeEnabled }) => {
       </View>
       <View style={styles.settingContainer}>
         <Text style={[styles.setting, isDarkModeEnabled && styles.darkText]}>Dark Mode</Text>
-        <Switch 
-          value={isDarkModeEnabled} 
-          onValueChange={toggleDarkMode} 
-          thumbColor={isDarkModeEnabled ? '#f5dd4b' : '#f4f3f4'} 
-          trackColor={{ false: '#767577', true: '#81b0ff' }} 
+        <Switch
+          value={isDarkModeEnabled}
+          onValueChange={toggleDarkMode}
+          thumbColor={isDarkModeEnabled ? '#f5dd4b' : '#f4f3f4'}
+          trackColor={{ false: '#767577', true: '#81b0ff' }}
         />
       </View>
     </View>
