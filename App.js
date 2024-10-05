@@ -1,17 +1,22 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import Header from './components/header';
 import ProfileSection from './components/ProfileSection';
 import SettingsSection from './components/SettingsSection';
-import SignOutButton from './components/SignOutButton';
 
 const App = () => {
+  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
+
+  // Function to toggle Dark Mode
+  const toggleDarkMode = () => {
+    setIsDarkModeEnabled(previousState => !previousState);
+  };
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isDarkModeEnabled ? styles.darkMode : styles.lightMode]}>
       <Header />
       <ProfileSection />
-      <SettingsSection />
-      <SignOutButton />
+      <SettingsSection toggleDarkMode={toggleDarkMode} />
     </View>
   );
 };
@@ -19,9 +24,14 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+  },
+  darkMode: {
+    backgroundColor: '#333',
+    color: '#fff',
+  },
+  lightMode: {
+    backgroundColor: '#fff',
+    color: '#000',
   },
 });
 
