@@ -1,16 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const SignOutButton = () => {
   const handleSignOut = () => {
-    // Handle sign-out logic
-    console.log('User signed out');
+    console.log('Sign Out Pressed');
   };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={handleSignOut}>
-        <Text style={styles.signOutText}>Sign Out</Text>
+      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+        <Text style={styles.buttonText}>Sign Out</Text>
       </TouchableOpacity>
     </View>
   );
@@ -19,11 +18,19 @@ const SignOutButton = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    width: '100%',
+    alignItems: 'center',
   },
-  signOutText: {
-    color: 'blue',
-    fontSize: 16,
-    textDecorationLine: 'underline',
+  button: {
+    backgroundColor: '#ff3b30',
+    padding: 15,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#ffffff',
+    fontSize: 18,
   },
 });
 

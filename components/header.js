@@ -1,32 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
-const Header = ({ isDarkModeEnabled }) => {
+const Header = () => {
   return (
-    <View style={[styles.container, isDarkModeEnabled ? styles.darkMode : styles.lightMode]}>
-      <Text style={[styles.title, isDarkModeEnabled && styles.darkText]}>Profile</Text>
+    <View style={styles.header}>
+      <Text style={styles.title}>Profile</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20,
+  header: {
+    backgroundColor: '#6200EE',
     width: '100%',
+    padding: 20,
     alignItems: 'center',
   },
   title: {
+    color: '#ffffff',
     fontSize: 24,
-    fontWeight: 'bold',
-  },
-  darkMode: {
-    backgroundColor: '#333',
-  },
-  lightMode: {
-    backgroundColor: '#fff',
-  },
-  darkText: {
-    color: '#fff',
   },
 });
 

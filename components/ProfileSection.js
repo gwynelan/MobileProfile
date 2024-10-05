@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
-const ProfileSection = ({ isDarkModeEnabled }) => {
+const ProfileSection = () => {
   return (
     <View style={styles.container}>
-      <Text style={[styles.profileName, isDarkModeEnabled && styles.darkText]}>David Robinson</Text>
-      <Text style={[styles.joinedText, isDarkModeEnabled && styles.darkText]}>Joined 1 year ago</Text>
-      <Text style={[styles.profileDetail, isDarkModeEnabled && styles.darkText]}>Manage user</Text>
+      {/* Avatar Image */}
+      <Image 
+        source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwyXeKDN29AmZgZPLS7n0Bepe8QmVappBwZCeA3XWEbWNdiDFB' }} // Replace with your avatar URL
+        style={styles.avatar}
+      />
+      <Text style={styles.profileName}>David Robinson</Text>
+      <Text style={styles.joinedText}>Joined 1 year ago</Text>
+    
     </View>
   );
 };
@@ -14,8 +19,14 @@ const ProfileSection = ({ isDarkModeEnabled }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    alignItems: 'flex-start',
+    alignItems: 'center', // Center the content
     width: '100%',
+  },
+  avatar: {
+    width: 100,   // Adjust the width as needed
+    height: 100,  // Adjust the height as needed
+    borderRadius: 50, // Makes the image circular
+    marginBottom: 10, // Space between avatar and text
   },
   profileName: {
     fontSize: 20,
@@ -28,9 +39,6 @@ const styles = StyleSheet.create({
   profileDetail: {
     fontSize: 16,
     marginTop: 10,
-  },
-  darkText: {
-    color: '#fff', // Text color for dark mode
   },
 });
 
