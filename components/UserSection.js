@@ -1,41 +1,38 @@
-import React, { useState } from 'react';
-import { View } from 'react-native';
-import Header from './components/header';
-import ProfileSection from './components/ProfileSection';
-import SettingsSection from './components/SettingsSection';
-import SignOutButton from './components/SignOutButton';
-import UserSection from './components/UserSection'; // Import UserSection
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const App = () => {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState(false);
-
-  // Function to toggle Dark Mode
-  const toggleDarkMode = () => {
-    setIsDarkModeEnabled((previousState) => !previousState);
-  };
-
+const UserSection = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: isDarkModeEnabled ? '#333' : '#fff',
-      }}
-    >
-      <Header isDarkModeEnabled={isDarkModeEnabled} />
-      <ProfileSection isDarkModeEnabled={isDarkModeEnabled} />
-      <UserSection /> {/* Add UserSection here */}
-      <SettingsSection toggleDarkMode={toggleDarkMode} isDarkModeEnabled={isDarkModeEnabled} />
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'flex-end',
-          padding: 20,
-        }}
-      >
-        <SignOutButton />
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.title}>Manage User</Text>
+      <TouchableOpacity style={styles.arrowContainer}>
+        <Text style={styles.arrow}>></Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    width: '100%',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  arrowContainer: {
+    paddingHorizontal: 10,
+  },
+  arrow: {
+    fontSize: 20,
+    color: '#007AFF', // Change color as per your design
+  },
+});
+
+export default UserSection;
