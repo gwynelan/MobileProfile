@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, ScrollView, View, StyleSheet } from 'react-native';
 import ThemeProvider from './components/ThemeContext'; // Adjust path as necessary
 import Header from './components/header'; // Adjust path as necessary
 import UserSection from './components/UserSection'; // Adjust path as necessary
@@ -18,15 +18,27 @@ const App = () => {
     <ThemeProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <Header />
-        <ScrollView>
-          <UserSection />
-          <ProfileSection />
-          <SettingsSection />
+        <View style={styles.container}>
+          <ScrollView contentContainerStyle={styles.scrollContainer}>
+            <ProfileSection />
+            <UserSection />
+            <SettingsSection />
+          </ScrollView>
           <SignOutButton onSignOut={handleSignOut} />
-        </ScrollView>
+        </View>
       </SafeAreaView>
     </ThemeProvider>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between', // Space out the components
+  },
+  scrollContainer: {
+    flexGrow: 1, // Allow the ScrollView to expand
+  },
+});
 
 export default App;
