@@ -1,7 +1,7 @@
 // ProfileSection.js
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { ThemeContext } from '../components/Theme/ThemeContext'; // Adjust path as necessary
+import { ThemeContext } from '../Theme/ThemeContext'; // Adjust path as necessary
 
 const ProfileSection = () => {
   const { isDarkMode } = useContext(ThemeContext); // Consume context

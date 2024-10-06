@@ -1,7 +1,7 @@
 // SettingsSection.js
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Switch } from 'react-native';
-import { ThemeContext } from '../components/Theme/ThemeContext'; // Adjust path as necessary
+import { ThemeContext } from './Theme/ThemeContext'; // Adjust path as necessary
 import Icon from 'react-native-vector-icons/FontAwesome'; // Adjust based on your icon library
 
 const SettingsSection = () => {
