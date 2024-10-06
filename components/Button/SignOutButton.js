@@ -1,7 +1,7 @@
 // SignOutButton.js
 import React, { useContext } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import { ThemeContext } from './ThemeContext'; // Adjust path as necessary
+import { ThemeContext } from '..components/Theme/ThemeContext'; // Adjust path as necessary
 
 const SignOutButton = ({ onSignOut }) => {
   const { isDarkMode } = useContext(ThemeContext); // Access dark mode state

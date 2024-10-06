@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { ThemeContext } from './ThemeContext'; // Adjust path as necessary
+import { ThemeContext } from '.components/Theme/ThemeContext'; // Adjust path as necessary
 
 const UserSection = () => {
   const { isDarkMode } = useContext(ThemeContext); // Consume context
