@@ -1,7 +1,7 @@
 // Header.js
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { ThemeContext } from '.components/Theme/ThemeContext'; // Adjust path as necessary
+import { ThemeContext } from '../components/Theme/ThemeContext.js'; // Adjust path as necessary
 
 const Header = () => {
   const { isDarkMode } = useContext(ThemeContext); // Consume context

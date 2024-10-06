@@ -4,7 +4,7 @@
     "slug": "MobileProfile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": ".assets/img/adaptive-icon.png",
+    "icon": ".assets/adaptive-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/img/splash.png",
