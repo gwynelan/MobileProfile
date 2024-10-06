@@ -1,10 +1,10 @@
 // SignOutButton.js
 import React, { useContext } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import { ThemeContext } from '../Theme/ThemeContext'; // Adjust path as necessary
+import { ThemeContext } from '../Theme/ThemeContext';
 
 const SignOutButton = ({ onSignOut }) => {
-  const { isDarkMode } = useContext(ThemeContext); // Access dark mode state
+  const { isDarkMode } = useContext(ThemeContext);
 
   return (
     <View style={[styles.container, { backgroundColor: isDarkMode ?  '#333' : '#fff' }]}>
@@ -17,31 +17,31 @@ const SignOutButton = ({ onSignOut }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 202, // Set a fixed height for the container
-    justifyContent: 'flex-end', // Align the button at the bottom
-    alignItems: 'center', // Center the button horizontally
-    paddingBottom: 30, // Add some padding at the bottom
+    height: 202,
+    justifyContent: 'flex-end', 
+    alignItems: 'center', 
+    paddingBottom: 30,
   },
   button: {
-    width: '60%', // Set button width to 60% of the parent container
+    width: '60%', 
     padding: 15,
-    backgroundColor: 'gray', // Black color for sign out
+    backgroundColor: 'gray', 
     borderRadius: 5,
     alignItems: 'center',
-    shadowColor: '#000', // Shadow color
+    shadowColor: '#000', 
     shadowOffset: {
       width: 0,
-      height: 2, // Shadow height
+      height: 2, 
     },
-    shadowOpacity: 0.8, // Shadow opacity
-    shadowRadius: 9, // Shadow radius
-    elevation: 5, // For Android shadow
+    shadowOpacity: 0.8, 
+    shadowRadius: 9, 
+    elevation: 5, 
   },
   buttonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
-    textTransform: 'uppercase', // Uppercase for emphasis
+    textTransform: 'uppercase', 
   },
 });
 

@@ -5,7 +5,7 @@ import ThemeProvider from './components/Theme/ThemeContext'; // Adjust path as n
 import Header from './components/Header/header'; // Adjust path as necessary
 import UserSection from './components/Profile/UserSection'; // Adjust path as necessary
 import ProfileSection from './components/Avatar/ProfileSection'; // Adjust path as necessary
-import SettingsSection from './components/SettingsSection'; // Adjust path as necessary
+import SettingsSection from './components/Settings/SettingsSection'; // Adjust path as necessary
 import SignOutButton from './components/Button/SignOutButton'; // Adjust path as necessary
 
 const App = () => {

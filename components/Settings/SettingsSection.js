@@ -1,18 +1,18 @@
 // SettingsSection.js
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Switch } from 'react-native';
-import { ThemeContext } from './Theme/ThemeContext'; // Adjust path as necessary
-import Icon from 'react-native-vector-icons/FontAwesome'; // Adjust based on your icon library
+import { ThemeContext } from '../Theme/ThemeContext'; 
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const SettingsSection = () => {
-  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext); // Consume context
+  const { isDarkMode, toggleDarkMode } = useContext(ThemeContext); 
 
   return (
     <View style={[styles.container, { backgroundColor: isDarkMode ? '#333' : '#fff' }]}>
       <Text style={[styles.title, { color: isDarkMode ? '#fff' : '#000' }]}>Settings</Text>
 
       <TouchableOpacity 
-        style={[styles.button, { backgroundColor: isDarkMode ? '#555' : '#f0f0f0' }]} // Dynamic background
+        style={[styles.button, { backgroundColor: isDarkMode ? '#555' : '#f0f0f0' }]} 
         onPress={() => { /* Handle notifications */ }}
       >
         <View style={styles.buttonContent}>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
     elevation: 3, // For Android shadow effect
-    shadowColor: '#000', // For iOS shadow
+    shadowColor: '#000', 
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 15,
-    textAlign: 'left', // Left align the title
+    textAlign: 'left',
   },
   button: {
     padding: 15,
@@ -78,12 +78,12 @@ const styles = StyleSheet.create({
   toggleText: {
     fontSize: 18,
     fontWeight: '600',
-    marginRight: 210, // Add some space between the text and the switch
+    marginRight: 210, 
   },
   buttonContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%', // Ensures the button content takes full width
+    width: '100%',
   },
 });
 
