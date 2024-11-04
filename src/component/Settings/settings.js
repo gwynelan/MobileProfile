@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
       height: 1,
     },
     shadowOpacity: 0.2, 
-    shadowRadius: 5, 
+    shadowRadius: 4, 
     elevation: 3, 
   },
   optionText: {
