@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import Header from '../Header/header';
 import Avatar from '../Avatar/avatar';
 import ImageSlider from '../ImageSlider/image';
 import Settings from '../Settings/settings';
@@ -12,7 +11,6 @@ const ProfileScreen = () => {
   
     return (
       <View style={[styles.container, isDarkMode ? styles.darkContainer : styles.lightContainer]}>
-        <Header />
         <ScrollView contentContainerStyle={styles.content}>
           <Avatar />
           <ImageSlider />

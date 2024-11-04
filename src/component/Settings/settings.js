@@ -1,15 +1,19 @@
-// Settings.js
+
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Switch } from 'react-native';
 import { useTheme } from '../Theme/theme';
 import { Ionicons } from '@expo/vector-icons'; 
-const Settings = () => {
-  const { isDarkMode } = useTheme(); // Get dark mode state
+import { useNavigation } from '@react-navigation/native'; 
 
-  // Handle sign out function (to be implemented as needed)
+const Settings = () => {
+  const { isDarkMode, toggleTheme } = useTheme(); 
+  const navigation = useNavigation();
+
   const handleSignOut = () => {
-    // Add your sign out logic here (e.g., clearing user data, redirecting, etc.)
     console.log('Sign Out pressed');
+    
+   
+    navigation.navigate('Login');
   };
 
   return (
@@ -21,10 +25,15 @@ const Settings = () => {
         <Text style={[styles.optionText, { color: isDarkMode ? '#fff' : '#000' }]}>Languages</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={[styles.option, { backgroundColor: isDarkMode ? '#444' : '#fff' }]}>
-        <Ionicons name="notifications-outline" size={24} color={isDarkMode ? '#fff' : '#007bff'} />
-        <Text style={[styles.optionText, { color: isDarkMode ? '#fff' : '#000' }]}>Notifications</Text>
-      </TouchableOpacity>
+      <View style={[styles.option, { backgroundColor: isDarkMode ? '#444' : '#fff', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }]}>
+        <Text style={[styles.optionText, { color: isDarkMode ? '#fff' : '#000' }]}>Dark Mode</Text>
+        <Switch
+          trackColor={{ false: '#767577', true: '#81b0ff' }}
+          thumbColor={isDarkMode ? '#f5dd4b' : '#f4f3f4'}
+          onValueChange={toggleTheme}
+          value={isDarkMode}
+        />
+      </View>
 
       <TouchableOpacity style={[styles.option, { backgroundColor: isDarkMode ? '#444' : '#fff' }]}>
         <Ionicons name="information-circle-outline" size={24} color={isDarkMode ? '#fff' : '#007bff'} />
