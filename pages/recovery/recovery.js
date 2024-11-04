@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons'; // Ensure you have this library installed
+import Icon from 'react-native-vector-icons/MaterialIcons'; 
 
 const Recovery = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -8,31 +8,31 @@ const Recovery = () => {
   const [verificationCode, setVerificationCode] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [passwordVisible, setPasswordVisible] = useState(false); // State for password visibility
-
+  const [passwordVisible, setPasswordVisible] = useState(false); 
+  
   const handleMethodSelection = (method) => {
     setSelectedMethod(method);
   };
 
   const handleSendCode = () => {
     console.log('Sending verification code via:', selectedMethod);
-    setCurrentStep(2); // Move to the verification code step
+    setCurrentStep(2); 
   };
 
   const handleVerifyCode = () => {
     console.log('Verification code entered:', verificationCode);
-    setCurrentStep(3); // Move to the reset password step
+    setCurrentStep(3); 
   };
 
   const handleResetPassword = () => {
     console.log('New password:', newPassword);
     console.log('Confirm password:', confirmPassword);
-    // Add logic to finalize password reset
+    
   };
 
   const handleBack = () => {
     if (currentStep > 1) {
-      setCurrentStep(currentStep - 1); // Move back to the previous step
+      setCurrentStep(currentStep - 1); 
     }
   };
 
@@ -186,14 +186,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   passwordContainer: {
-    position: 'relative', // Allows absolute positioning of the icon
+    position: 'relative', 
     width: '80%',
     marginBottom: 15,
   },
   eyeIcon: {
     position: 'absolute',
     right: 10,
-    top: 10, // Adjust top positioning to align with input
+    top: 10, 
   },
   backButton: {
     backgroundColor: '#007bff',
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: '80%',
     alignItems: 'center',
-    marginTop: 20, // Ensure some space above the button
+    marginTop: 20, 
   },
   backButtonText: {
     color: '#fff',
