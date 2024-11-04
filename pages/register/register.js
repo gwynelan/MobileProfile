@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: '#EAEFF2', // Soft background color
+    backgroundColor: '#EAEFF2', 
   },
   title: {
     fontSize: 26,
@@ -118,12 +118,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 15,
     marginBottom: 15,
-    backgroundColor: '#FFFFFF', // White background for inputs
+    backgroundColor: '#FFFFFF', 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 1,
-    elevation: 2, // For Android shadow
+    elevation: 2, 
   },
   passwordContainer: {
     position: 'relative',
@@ -138,12 +138,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 15,
     paddingRight: 40,
-    backgroundColor: '#FFFFFF', // White background for inputs
+    backgroundColor: '#FFFFFF', 
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 1,
-    elevation: 2, // For Android shadow
+    elevation: 2,
   },
   eyeButton: {
     position: 'absolute',
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '80%',
-    backgroundColor: '#007bff', // Olive green for button
+    backgroundColor: '#007bff',
     borderRadius: 10,
     paddingVertical: 12,
     marginBottom: 15,
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 3,
-    elevation: 2, // For Android shadow
+    elevation: 2,
   },
   buttonText: {
     color: 'white',
@@ -173,11 +173,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   bottomText: {
-    color: '#333', // Dark gray for text
+    color: '#333', 
     fontSize: 16,
   },
   bottomTextLink: {
-    color: '#007bff', // Olive green for link
+    color: '#007bff',
     fontWeight: 'bold',
     fontSize: 16,
   },
